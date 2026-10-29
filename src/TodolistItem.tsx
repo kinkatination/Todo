@@ -8,6 +8,9 @@ export const TodolistItem = ({ title, tasks, date }: TodolistItemProps) => {
       <input />
       <button>+</button>
     </div> */}
+    {tasks.length === 0 ? (
+      <p> There is no task</p>
+    ) : (
       <ul>
         {tasks.map((task) => {
           return (
@@ -18,6 +21,7 @@ export const TodolistItem = ({ title, tasks, date }: TodolistItemProps) => {
           );
         })}
       </ul>
+    )}
       <div>
         <button>All</button>
         <button>Active</button>
