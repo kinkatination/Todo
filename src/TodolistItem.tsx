@@ -1,4 +1,5 @@
 import { Task } from "./App";
+import { Button } from "./Button";
 
 export const TodolistItem = ({ title, tasks, date }: TodolistItemProps) => {
   return (
@@ -8,24 +9,24 @@ export const TodolistItem = ({ title, tasks, date }: TodolistItemProps) => {
       <input />
       <button>+</button>
     </div> */}
-    {tasks.length === 0 ? (
-      <p> There is no task</p>
-    ) : (
-      <ul>
-        {tasks.map((task) => {
-          return (
-            <li key={task.id}>
-              <input type="checkbox" checked={task.isDone} />{" "}
-              <span>{task.title}</span>
-            </li>
-          );
-        })}
-      </ul>
-    )}
+      {tasks.length === 0 ? (
+        <p> There is no task</p>
+      ) : (
+        <ul>
+          {tasks.map((task) => {
+            return (
+              <li key={task.id}>
+                <input type="checkbox" checked={task.isDone} />{" "}
+                <span>{task.title}</span>
+              </li>
+            );
+          })}
+        </ul>
+      )}
       <div>
-        <button>All</button>
-        <button>Active</button>
-        <button>Completed</button>
+        <Button title={"All"} />
+        <Button title={"Active"} />
+        <Button title={"Completed"} />
       </div>
       <div>{date}</div>
     </div>
@@ -37,5 +38,3 @@ type TodolistItemProps = {
   tasks: Task[];
   date?: string;
 };
-
-
